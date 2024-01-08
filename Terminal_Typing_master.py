@@ -37,3 +37,20 @@ def update_leaderboard(username, words_typed, time_taken, wpm):
 
     with open(leaderboard_file, 'w') as f:
         json.dump(leaderboard, f, indent=4)  
+# Display leaderboard
+def show_leaderboard():
+    leaderboard_file = 'leaderboard.json'
+    
+    try:
+        with open(leaderboard_file, 'r') as f:
+            leaderboard = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        leaderboard = {}
+    
+    print("== Leaderboard ==")
+    
+    if not leaderboard:
+        print("Leaderboard is empty.")
+    else:
+        for user, metrics in leaderboard.items():
+            print(f"{user}: {metrics}")
