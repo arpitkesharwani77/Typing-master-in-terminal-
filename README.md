@@ -1,4 +1,5 @@
-# Typing Test Application
+# Terminal Typing master
+
 
 This is a simple Typing Test application written in Python. It allows users to test their typing speed by typing a given paragraph. The application also features a leaderboard to keep track of users' performance.
 
